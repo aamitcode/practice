@@ -1,0 +1,7 @@
+F:\Pactice\Code\Code\bin\Debug\Code.exe.config
+F:\Pactice\Code\Code\bin\Debug\Code.exe
+F:\Pactice\Code\Code\bin\Debug\Code.pdb
+F:\Pactice\Code\Code\obj\Debug\Code.csprojAssemblyReference.cache
+F:\Pactice\Code\Code\obj\Debug\Code.csproj.CoreCompileInputs.cache
+F:\Pactice\Code\Code\obj\Debug\Code.exe
+F:\Pactice\Code\Code\obj\Debug\Code.pdb
