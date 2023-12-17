@@ -1,54 +1,51 @@
 ﻿namespace BasicCalculator;
 
+using System.Collections;
+using System.Globalization;
+
 public class BasicCalculator
 {
-    public int TestOne(string mathExpression){
-        int leftNumber = 0;
-        int rightNumber = 0;
-        bool operationFound =false;
-        char operation ='+';
-        int result =0;
-        foreach(var item in mathExpression){
-            if(isDigit(item)){
-                if(!operationFound){
-                    leftNumber = leftNumber*10 + item -'0';
-                }
-                if(operationFound){
-                    rightNumber = rightNumber*10 + item-'0';
-                }
+    public int Calculate(string mathExpression){
+        mathExpression = mathExpression.Replace(" ","");
+        var stack = new Stack<int>();
+        int number=0;
+        char sign='+';
+        for(int i=0;i<mathExpression.Length;i++){
+            char c =mathExpression[i];
+            if(IsDigit(c)){
+                number = number *10 + mathExpression[i] -'0';
             }
-            else{
-                if(!operationFound){
-                    operationFound=true;
+            if (i + 1 == mathExpression.Length || (c == '+' || c == '-' || c == '*' || c == '/')){
+                switch(sign){
+                    case '+':
+                        stack.Push(number);
+                        break;
+                    case '-':
+                        stack.Push(-1*number);
+                        break;
+                    case '*':
+                        var result = stack.Pop()*number;
+                        stack.Push(result);
+                        break ;
+                    case '/':
+                        var result1 = stack.Pop() / number;
+                        stack.Push(result1);
+                        break ;
                 }
-                else{
-                    leftNumber = performOperation(leftNumber,rightNumber,operation);
-                    rightNumber=0;
-                }
-                operation = item;
+                number=0;
+                sign = mathExpression[i];  
             }
         }
-       return performOperation(leftNumber,rightNumber,operation);
+        return SumStack(stack);
     }
-
-    public static bool isDigit(char c){
-        if('0'<=c && '9'>=c ){
-            return true;
+    private static bool IsDigit(char c){
+        return '0'<=c && '9'>=c ;
+    }
+    private static int SumStack(Stack<int> stack){
+        int finalResult=0;
+        while(stack.Count>0){
+            finalResult +=stack.Pop();
         }
-        return false;
+        return finalResult;
     }
-
-    public static int performOperation(int leftNumber, int rightNumber, char operation){
-         int result=0;
-        switch(operation){
-            case '+':
-            result = leftNumber + rightNumber;
-            break;
-            case '-':
-            result =leftNumber - rightNumber;
-            break;
-        }
-        return result;
-    }
-
 }

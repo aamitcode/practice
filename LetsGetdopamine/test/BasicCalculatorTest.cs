@@ -12,7 +12,7 @@ public class BasicCalculatorTest
         int secondNumber =2;
         int thirdNumber=4;
         int forthNumber =5;
-        var result = target.TestOne($"{firstNumber}+{secondNumber}+{thirdNumber}-{forthNumber}");
+        var result = target.Calculate($"{firstNumber}+{secondNumber}+{thirdNumber}-{forthNumber}");
         Assert.AreEqual(firstNumber+secondNumber+thirdNumber-forthNumber,result);
     }
 }
