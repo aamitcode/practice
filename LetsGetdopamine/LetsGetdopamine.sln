@@ -13,6 +13,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gamelib", "snakeladder\game
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gameDriver", "snakeladder\gameDriver\gameDriver.csproj", "{4ADA3847-BDAA-4C5A-BA26-A2F9FB45CAE3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RateLimitter", "RateLimitter", "{F748D0FE-155A-4FAA-A965-51BAA21E2300}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RateLimitterLib", "RateLimitterLib\RateLimitterLib.csproj", "{FCD8BFB4-9C82-4C86-B8F4-E1649356A8EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RateLimiterDriver", "RateLimiterDriver\RateLimiterDriver.csproj", "{0A9F1424-9EC8-4E0E-8C1E-E182F6B08F39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,9 +45,21 @@ Global
 		{4ADA3847-BDAA-4C5A-BA26-A2F9FB45CAE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4ADA3847-BDAA-4C5A-BA26-A2F9FB45CAE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4ADA3847-BDAA-4C5A-BA26-A2F9FB45CAE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCD8BFB4-9C82-4C86-B8F4-E1649356A8EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCD8BFB4-9C82-4C86-B8F4-E1649356A8EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCD8BFB4-9C82-4C86-B8F4-E1649356A8EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCD8BFB4-9C82-4C86-B8F4-E1649356A8EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A9F1424-9EC8-4E0E-8C1E-E182F6B08F39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A9F1424-9EC8-4E0E-8C1E-E182F6B08F39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A9F1424-9EC8-4E0E-8C1E-E182F6B08F39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A9F1424-9EC8-4E0E-8C1E-E182F6B08F39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FCD8BFB4-9C82-4C86-B8F4-E1649356A8EF} = {F748D0FE-155A-4FAA-A965-51BAA21E2300}
+		{0A9F1424-9EC8-4E0E-8C1E-E182F6B08F39} = {F748D0FE-155A-4FAA-A965-51BAA21E2300}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C87BA6A0-772D-44AF-8E39-03F1B83FC1B4}
