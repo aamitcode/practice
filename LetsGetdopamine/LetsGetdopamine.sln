@@ -15,9 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gameDriver", "snakeladder\g
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RateLimitter", "RateLimitter", "{F748D0FE-155A-4FAA-A965-51BAA21E2300}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RateLimitterLib", "RateLimitterLib\RateLimitterLib.csproj", "{FCD8BFB4-9C82-4C86-B8F4-E1649356A8EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RateLimitterLib", "RateLimitterLib\RateLimitterLib.csproj", "{FCD8BFB4-9C82-4C86-B8F4-E1649356A8EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RateLimiterDriver", "RateLimiterDriver\RateLimiterDriver.csproj", "{0A9F1424-9EC8-4E0E-8C1E-E182F6B08F39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RateLimiterDriver", "RateLimiterDriver\RateLimiterDriver.csproj", "{0A9F1424-9EC8-4E0E-8C1E-E182F6B08F39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{341EB9DC-A1F7-4F22-9B21-6238D154CE18}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{0A9F1424-9EC8-4E0E-8C1E-E182F6B08F39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A9F1424-9EC8-4E0E-8C1E-E182F6B08F39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A9F1424-9EC8-4E0E-8C1E-E182F6B08F39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{341EB9DC-A1F7-4F22-9B21-6238D154CE18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{341EB9DC-A1F7-4F22-9B21-6238D154CE18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{341EB9DC-A1F7-4F22-9B21-6238D154CE18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{341EB9DC-A1F7-4F22-9B21-6238D154CE18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +66,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{FCD8BFB4-9C82-4C86-B8F4-E1649356A8EF} = {F748D0FE-155A-4FAA-A965-51BAA21E2300}
 		{0A9F1424-9EC8-4E0E-8C1E-E182F6B08F39} = {F748D0FE-155A-4FAA-A965-51BAA21E2300}
+		{341EB9DC-A1F7-4F22-9B21-6238D154CE18} = {F748D0FE-155A-4FAA-A965-51BAA21E2300}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C87BA6A0-772D-44AF-8E39-03F1B83FC1B4}

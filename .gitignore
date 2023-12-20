@@ -24,3 +24,5 @@
 /LetsGetdopamine/RateLimiterDriver/obj
 /LetsGetdopamine/RateLimitterLib/bin/Debug/net8.0
 /LetsGetdopamine/RateLimitterLib/obj
+/LetsGetdopamine/DataLayer/bin/Debug/net8.0
+/LetsGetdopamine/DataLayer/obj

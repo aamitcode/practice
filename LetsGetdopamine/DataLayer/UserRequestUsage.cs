@@ -1,14 +1,13 @@
 ﻿/****************************************************************************************************
  * Author - Amit Chauhan
- * Description - Policy Class
+ * Description - Request usage object
  ****************************************************************************************************/
 
-namespace RateLimitterLib
+namespace DataLayer
 {
-    public class Policy
+    public sealed class UserRequestUsage
     {
-        public int TimeUnitInSeconds { get; set; }
-        public int MaxRequest { get; set; }
-
+        public long OldestRequestTimeStamp { get; set; }
+        public int RequestCount { get; set; }
     }
 }

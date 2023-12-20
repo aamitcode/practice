@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace RateLimitterLib
 {
-    public interface IRateLimitCalculator
+    public sealed class RateLimitRespone
     {
-        public bool IsRequestInLimit(string userIdentifier, out int retryAftermiliSeconds);
+        public bool IsRequestAllow { get; set; }
+        public int RetryAfterMiliSeconds { get; set; }
     }
 }
