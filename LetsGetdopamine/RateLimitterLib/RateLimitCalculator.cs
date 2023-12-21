@@ -6,17 +6,19 @@
 namespace RateLimitterLib
 {
     using DataLayer;
-    public class RateLimitCalculator
+    using Dopamine.Entities;
+
+    public class RateLimitCalculator : IRateLimitCalculator
     {
         private readonly Policy rateLimitPolicy;
-        private readonly IDataRepository dataRepository;
+        private readonly IDataRepository<TokenBucketWithCredit> dataRepository;
 
         /// <summary>
         /// Inject rate limit policy and data repo for testing
         /// </summary>
         /// <param name="rateLimitPolicy">rate limit policy</param>
         /// <param name="dataRepository">data layer</param>
-        public RateLimitCalculator(Policy rateLimitPolicy, IDataRepository dataRepository)
+        public RateLimitCalculator(Policy rateLimitPolicy, IDataRepository<TokenBucketWithCredit> dataRepository)
         {
             this.rateLimitPolicy = rateLimitPolicy;
             this.dataRepository = dataRepository;
@@ -27,7 +29,7 @@ namespace RateLimitterLib
         /// </summary>
         /// <param name="userIdentifier">identifier</param>
         /// <returns>Response : is allowed and retry after</returns>
-        public async Task<RateLimitRespone> IsRequestInLimitAsync(string userIdentifier)
+        public async Task<RateLimitRespone> IsRequestInLimitAsync(string userIdentifier, long requestedTokens = 1)
         {
             RateLimitRespone response = new RateLimitRespone() { IsRequestAllow = false, RetryAfterMiliSeconds = -1 };
             long requestTime = DateTime.UtcNow.Ticks;

@@ -1,16 +1,18 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using DataLayer;
+using Dopamine.Entities;
 using RateLimitterLib;
 using System.Diagnostics;
 
-var rateLimitPolicy = new Policy()
+var rateLimitPolicy = new PolicyWithCredit()
 {
     MaxRequest = 4,
-    TimeUnitInSeconds = 3
+    MaxCredit = 2,
+    TimeUnitInSeconds = 1
 };
 
-var RateLimitCalculator = new RateLimitCalculator(rateLimitPolicy, new DataRepository());
+var RateLimitCalculator = new RateLimitCalculatorTokenBucketWithCredit(rateLimitPolicy, new DataRepository<TokenBucketWithCredit>());
 List<string> useIdentifiers = new List<string> { "Test1", "Test2", "Test3" };
 for (int i = 0; i < 20; i++)
 {
@@ -19,7 +21,7 @@ for (int i = 0; i < 20; i++)
     {
         string requestTime = DateTime.UtcNow.ToString();
         Stopwatch sw = Stopwatch.StartNew();
-        var requestAllow = RateLimitCalculator.IsRequestInLimitAsync(useIdentifier).Result;
+        var requestAllow = RateLimitCalculator.IsRequestInLimitAsync(useIdentifier,1).Result;
         sw.Stop();
         if (requestAllow.IsRequestAllow)
         {
@@ -30,7 +32,7 @@ for (int i = 0; i < 20; i++)
             Console.WriteLine($"{requestTime} Request Identifer:{useIdentifier} RequestCount :{i + 1} is allowed {requestAllow.IsRequestAllow}, Please retry after :{requestAllow.RetryAfterMiliSeconds} msecs timetaken:{sw.Elapsed.TotalMilliseconds}");
         }
 
-        System.Threading.Thread.Sleep(100);
+        System.Threading.Thread.Sleep(300);
     }
     //System.Threading.Thread.Sleep(250);
 }

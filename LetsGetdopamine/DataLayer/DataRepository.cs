@@ -5,11 +5,14 @@
 
 namespace DataLayer
 {
+    using Dopamine.Entities;
     using System.Collections.Concurrent;
-    public class DataRepository : IDataRepository
+
+    public class DataRepository<T> : IDataRepository<T> where T : class
     {
         //Using Hash Table with concrrency support
         private ConcurrentDictionary<string, Queue<long>> requestWindow = new ConcurrentDictionary<string, Queue<long>>();
+        private ConcurrentDictionary<string, T> bucketMap = new ConcurrentDictionary<string, T>();
 
         /// <summary>
         /// Insert and drop the entries from data base
@@ -52,6 +55,28 @@ namespace DataLayer
 
             await Task.Delay(1);
             return response;
+        }
+
+        public async Task<T> GetBucketAsync(string userIdentifier)
+        {
+            if (this.bucketMap.ContainsKey(userIdentifier))
+            {
+                return this.bucketMap[userIdentifier];
+            }
+
+            return default(T);
+        }
+
+        public async Task UpdateBucketAsync(string userIdentifier, T bucket)
+        {
+            if (this.bucketMap.ContainsKey(userIdentifier))
+            {
+                this.bucketMap[userIdentifier] = bucket;
+            }
+            else
+            {
+                this.bucketMap.GetOrAdd(userIdentifier, bucket);
+            }
         }
     }
 }
