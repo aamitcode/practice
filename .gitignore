@@ -26,3 +26,5 @@
 /LetsGetdopamine/RateLimitterLib/obj
 /LetsGetdopamine/DataLayer/bin/Debug/net8.0
 /LetsGetdopamine/DataLayer/obj
+/LetsGetdopamine/Dopamine.Entities/bin/Debug/net8.0
+/LetsGetdopamine/Dopamine.Entities/obj
