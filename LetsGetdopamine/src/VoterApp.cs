@@ -8,7 +8,7 @@ namespace src
 {
     public partial class Solution
     {
-        
+
         public string RankTeams(string[] votes)
         {
             if (votes.Length < 1)
@@ -17,7 +17,7 @@ namespace src
             }
             int numberofVoters = votes.Length;
             int numberofTeams = votes[0].Length;
-            Dictionary<char,int> teamVoteBank = new Dictionary<char, int>();
+            Dictionary<char, int> teamVoteBank = new Dictionary<char, int>();
             foreach (var userVote in votes)
             {
                 int weight = numberofTeams;
@@ -34,17 +34,16 @@ namespace src
             var teams = votes[0].ToCharArray();
 
             //Sorting
-            Array.Sort(teams, (x,y) =>
+            Array.Sort(teams, (x, y) =>
             {
                 if (teamVoteBank[x] != teamVoteBank[y])
                 {
 
-                    return teamVoteBank[y ] - teamVoteBank[x ];
+                    return teamVoteBank[y] - teamVoteBank[x];
                 }
                 return x - y;
             });
             return new string(teams);
         }
-
     }
 }
