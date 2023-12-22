@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace src
 {
-    public class Solution
+    public partial class Solution
     {
         public IList<IList<int>> ThreeSum(int[] nums)
         {

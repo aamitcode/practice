@@ -17,5 +17,13 @@ namespace test
             var result = target.ThreeSum([-1, 0, 1, 0]);
             Assert.AreEqual(1, result.Count);
         }
+
+        [TestMethod]
+        public void TestVoter()
+        {
+            var target = new Solution();
+            var result = target.RankTeams(["ABC", "ACB", "ABC", "ACB", "ACB"]);
+            Assert.AreEqual("ACB", result);
+        }
     }
 }
