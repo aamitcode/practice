@@ -17,13 +17,17 @@ namespace src
             }
             int numberofVoters = votes.Length;
             int numberofTeams = votes[0].Length;
-            int[,] teamVoteBank = new int[numberofTeams, 1];
+            Dictionary<char,int> teamVoteBank = new Dictionary<char, int>();
             foreach (var userVote in votes)
             {
                 int weight = numberofTeams;
                 foreach (var teamVote in userVote)
                 {
-                    teamVoteBank[teamVote - 'A', 0] = teamVoteBank[teamVote - 'A', 0] + weight;
+                    if (!teamVoteBank.ContainsKey(teamVote))
+                    {
+                        teamVoteBank.Add(teamVote, 0);
+                    }
+                    teamVoteBank[teamVote] = teamVoteBank[teamVote] + weight;
                     weight--;
                 }
             }
@@ -32,12 +36,12 @@ namespace src
             //Sorting
             Array.Sort(teams, (x,y) =>
             {
-                if (teamVoteBank[x - 'A', 0] != teamVoteBank[y - 'A', 0])
+                if (teamVoteBank[x] != teamVoteBank[y])
                 {
 
-                    return teamVoteBank[y - 'A', 0] - teamVoteBank[x - 'A', 0];
+                    return teamVoteBank[y ] - teamVoteBank[x ];
                 }
-                return y - x;
+                return x - y;
             });
             return new string(teams);
         }
