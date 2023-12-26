@@ -15,6 +15,55 @@ namespace src
             {
                 return string.Empty;
             }
+            
+            var teamVoteBank = buildVoteBankTracker(votes);
+            Dictionary<char, int> score = new Dictionary<char, int>();
+            
+            foreach(var teamWithVotes in teamVoteBank)
+            {
+                int weight = votes[0].Length;
+                score.Add(teamWithVotes.Key, 0);
+                foreach(var sc in teamWithVotes.Value)
+                {
+                    score[teamWithVotes.Key] += sc * weight;
+                    weight--;
+                }
+            }
+
+            
+            var teams = votes[0].ToCharArray();
+
+            //Sorting
+            Array.Sort(teams, (x, y) => sort(x, y, teamVoteBank));
+
+            return new string(teams);
+        }
+
+        public int sort(char x, char y, Dictionary<char, int> teamVoteBank)
+        {
+            if (teamVoteBank[x] != teamVoteBank[y])
+            {
+
+                return teamVoteBank[y] - teamVoteBank[x];
+            }
+            return x - y;
+        }
+
+        public int sort(char x, char y, Dictionary<char, int[]> teamVoteBank)
+        {
+            for (int i = 0; i < teamVoteBank.Count; i++)
+            {
+                if (teamVoteBank[x][i] != teamVoteBank[y][i])
+                {
+
+                    return teamVoteBank[y][i] - teamVoteBank[x][i];
+                }
+            }
+            return x - y;
+        }
+
+        public Dictionary<char, int> buildVoteBank(string[] votes)
+        {
             int numberofVoters = votes.Length;
             int numberofTeams = votes[0].Length;
             Dictionary<char, int> teamVoteBank = new Dictionary<char, int>();
@@ -31,19 +80,27 @@ namespace src
                     weight--;
                 }
             }
-            var teams = votes[0].ToCharArray();
-
-            //Sorting
-            Array.Sort(teams, (x, y) =>
+            return teamVoteBank;
+        }
+        public Dictionary<char, int[]> buildVoteBankTracker(string[] votes)
+        {
+            int numberofVoters = votes.Length;
+            int numberofTeams = votes[0].Length;
+            Dictionary<char, int[]> teamVoteBank = new Dictionary<char, int[]>();
+            foreach (var userVote in votes)
             {
-                if (teamVoteBank[x] != teamVoteBank[y])
+                int pos = 0;
+                foreach (var teamVote in userVote)
                 {
-
-                    return teamVoteBank[y] - teamVoteBank[x];
+                    if (!teamVoteBank.ContainsKey(teamVote))
+                    {
+                        teamVoteBank.Add(teamVote, new int[userVote.Length]);
+                    }
+                    teamVoteBank[teamVote][pos]++;
+                    pos++;
                 }
-                return x - y;
-            });
-            return new string(teams);
+            }
+            return teamVoteBank;
         }
     }
 }
