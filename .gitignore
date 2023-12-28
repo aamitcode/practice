@@ -28,3 +28,7 @@
 /LetsGetdopamine/DataLayer/obj
 /LetsGetdopamine/Dopamine.Entities/bin/Debug/net8.0
 /LetsGetdopamine/Dopamine.Entities/obj
+/LetsGetdopamine/MiddleWireRouter/bin/Debug/net8.0
+/LetsGetdopamine/MiddlewireRouter.Test/bin/Debug/net8.0
+/LetsGetdopamine/MiddlewireRouter.Test/obj
+/LetsGetdopamine/MiddleWireRouter/obj
