@@ -6,9 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Dopamin.DataTypes\Dopamin.DataTypes.csproj" />
-    <ProjectReference Include="..\Dopamine.Entities\Dopamine.Entities.csproj" />
-  </ItemGroup>
-
 </Project>
