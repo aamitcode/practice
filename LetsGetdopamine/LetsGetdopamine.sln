@@ -31,7 +31,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Middlewearrouter", "Middlew
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiddlewireRouter.Test", "MiddlewireRouter.Test\MiddlewireRouter.Test.csproj", "{3DBCF0EF-1F82-449B-83AF-D545CCEE603B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dopamin.DataTypes", "Dopamin.DataTypes\Dopamin.DataTypes.csproj", "{9F5685BC-BC0C-4E38-A910-182160EDA02D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dopamin.DataTypes", "Dopamin.DataTypes\Dopamin.DataTypes.csproj", "{9F5685BC-BC0C-4E38-A910-182160EDA02D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileSystem.Collections", "FileSystem.Collections\FileSystem.Collections.csproj", "{07BF96D4-F577-46D8-849B-68DE5116B436}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FileSystem", "FileSystem", "{720BA0F3-202B-49DA-BDD7-5AFCE35F38AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileSystem.Test", "FileSystem.Test\FileSystem.Test.csproj", "{9FF7EDCF-3D78-4514-A2EB-2CB754366780}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +93,14 @@ Global
 		{9F5685BC-BC0C-4E38-A910-182160EDA02D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F5685BC-BC0C-4E38-A910-182160EDA02D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F5685BC-BC0C-4E38-A910-182160EDA02D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07BF96D4-F577-46D8-849B-68DE5116B436}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07BF96D4-F577-46D8-849B-68DE5116B436}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07BF96D4-F577-46D8-849B-68DE5116B436}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07BF96D4-F577-46D8-849B-68DE5116B436}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FF7EDCF-3D78-4514-A2EB-2CB754366780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FF7EDCF-3D78-4514-A2EB-2CB754366780}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FF7EDCF-3D78-4514-A2EB-2CB754366780}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FF7EDCF-3D78-4514-A2EB-2CB754366780}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -101,6 +115,8 @@ Global
 		{3A0789A5-8FFE-46C0-898C-44A3FF9F48A1} = {671426A2-773E-4E96-999B-1C23368F8673}
 		{3DBCF0EF-1F82-449B-83AF-D545CCEE603B} = {671426A2-773E-4E96-999B-1C23368F8673}
 		{9F5685BC-BC0C-4E38-A910-182160EDA02D} = {F748D0FE-155A-4FAA-A965-51BAA21E2300}
+		{07BF96D4-F577-46D8-849B-68DE5116B436} = {720BA0F3-202B-49DA-BDD7-5AFCE35F38AF}
+		{9FF7EDCF-3D78-4514-A2EB-2CB754366780} = {720BA0F3-202B-49DA-BDD7-5AFCE35F38AF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C87BA6A0-772D-44AF-8E39-03F1B83FC1B4}
