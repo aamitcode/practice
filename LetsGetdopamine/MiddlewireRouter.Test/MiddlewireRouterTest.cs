@@ -24,11 +24,11 @@ namespace MiddlewireRouter.Test
             rm.withRoute("jira.atlassian.com/testRoute/xyz", "fooData2");
             rm.withRoute("jira.atlassian.com/testRoute", "fooData3");
             rm.withRoute("jira.atlassian.com/testRoute/abc/xyz", "fooData4");
-            String v = rm.route("jira.atlassian.com/testRoute/*/xyz");
-            String w = rm.route("jira.atlassian.com/testRoute");
-            String x = rm.route("jira.atlassian.com/testRoute/abc");
-            String y = rm.route("jira.atlassian.com/testRoute/*");
-            String z = rm.route("jira.atlassian.com/*/xyz");
+            Assert.AreEqual("fooData4", rm.route("jira.atlassian.com/testRoute/*/xyz"));
+            Assert.AreEqual("fooData3", rm.route("jira.atlassian.com/testRoute"));
+            Assert.AreEqual("fooData1", rm.route("jira.atlassian.com/testRoute/abc"));
+            Assert.AreEqual("fooData1", rm.route("jira.atlassian.com/testRoute/*"));
+            Assert.AreEqual("fooData2", rm.route("jira.atlassian.com/*/xyz"));
         }
     }
 }
