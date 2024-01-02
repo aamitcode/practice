@@ -34,3 +34,7 @@
 /LetsGetdopamine/MiddleWireRouter/obj
 /LetsGetdopamine/Dopamin.DataTypes/bin/Debug/net8.0
 /LetsGetdopamine/Dopamin.DataTypes/obj
+/LetsGetdopamine/FileSystem.Collections/bin/Debug/net8.0
+/LetsGetdopamine/FileSystem.Collections/obj
+/LetsGetdopamine/FileSystem.Test/bin/Debug/net8.0
+/LetsGetdopamine/FileSystem.Test/obj
